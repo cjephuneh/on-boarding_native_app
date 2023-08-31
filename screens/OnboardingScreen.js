@@ -1,7 +1,9 @@
 import {View, Text, Button, StyleSheet} from 'react-native';
 import React from 'react';
 import Onboarding from 'react-native-onboarding-swiper';
+import Lottie from 'lottie-react-native';
 
+// const { width, height } = Dimensions.get('window');
 
 
 
@@ -11,37 +13,36 @@ export default function OnboardingScreen() {
            <Onboarding
                 containerStyles={{paddingHorizontal: '#fff'}}
                 pages={[
+                    
                     {
-                    backgroundColor: '#fff',
-                    image: (
-                        <View>
-                            <Text>Image 1</Text>
-                        </View>
-                    ),
-                    title: 'Onboarding',
-                    subtitle: 'Done with React Native Onboarding Swiper',
-                    },
-
-                    {
-                        backgroundColor: '#fff',
+                        backgroundColor: '#a7f3d0',
                         image: (
-                            <View>
-                                <Text>Image 1</Text>
+                            <View style={styles.lottie}>
+                                <Lottie source={require('../assets/animations/work.json')} autoPlay loop />
                             </View>
                         ),
-                        title: 'Boost your productivity',
-                        subtitle: 'Follow the steps to boost your productivity',
+                        title: 'Boost Productivity',
+                        subtitle: 'Subscribe this channel to boost your productivity level',
                     },
-
                     {
-                        backgroundColor: '#fff',
+                        backgroundColor: '#fef3c7',
                         image: (
-                            <View>
-                                <Text>Image 1</Text>
+                            <View style={styles.lottie}>
+                                <Lottie source={require('../assets/animations/work.json')} autoPlay loop />
                             </View>
                         ),
-                        title: 'work Smarter',
-                        subtitle: 'work smarter not harder',
+                        title: 'Work Seamlessly',
+                        subtitle: 'Get your work done seamlessly without interruption',
+                    },
+                    {
+                        backgroundColor: '#a78bfa',
+                        image: (
+                            <View style={styles.lottie}>
+                                <Lottie source={require('../assets/animations/achieve.json')} autoPlay loop />
+                            </View>
+                        ),
+                        title: 'Achieve Higher Goals',
+                        subtitle: 'By boosting your productivity we help you to achieve higher goals',
                     },
                     
                 ]}
@@ -60,5 +61,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    
+    lottie: {
+        width: 300,
+        height: 400,
     }
 })
